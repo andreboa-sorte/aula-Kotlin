@@ -3,9 +3,10 @@
 
 fun main() {
     fun sobreprint(){
-        val texto = "isso é um text imutavel" // toda variavel com "val" na frente, é uma variavel imutavel,
+        val texto = "isso é um texto imutavel" // toda variavel com "val" na frente, é uma variavel imutavel,
                                             // ou seja, não da para alterar o valor dela ou adicionar valor
         println(texto)
+        //caso queira definir o tipo da varivel, vc coloca ela com : e o tipo, depois do nomo. ex: var texto: String
         var textinho = "esse textinho pode ser alterado"
         println(textinho)
         textinho = "foi alterado"
@@ -17,7 +18,15 @@ fun main() {
                                     //canto esquedo do terminal
         println(textolongo)
 
-        println("usando uppercase: /n")
+        // "\n" = nova linha
+        //"\t" = tab (da o espaco do tab onde e colocado)
+        //"\b" = apaga (backspace)
+        //"\r" = printa somente o que vai ter depois do \r
+        // "\"" " = com so a \ da para colocar o " no meio dos ("...") sem fechar os "
+        //"\$" =  como o $ tambem e usado para poder chamar variavel, usar o \$ e uma garantia
+                // para sair como str e n como auxiliar de chamar  uma variavel
+
+        println("\n usando uppercase: \n")
         var up = textinho.toUpperCase()//transforma em tudo em caps
         println("foi alterado em caps: " + up)
         // da tanto para printar padrao ou com o 'ln', sem o ln, ele concatena com a linha de cima
@@ -27,10 +36,12 @@ fun main() {
 
         // para comprar se tem toda frase em uma variavel str, usamos o ".contentEquals()" passando a frase que
         // desejamos comprar no parenteses
-        var contem = texto.contentEquals("isso é um text imutavel")
+        var contem = texto.contentEquals("isso é um texto imutavel")
         println("comparacao exata se tem o conteudo igual da varaivel texto  = "+contem)
 
-        //para ver se tem somente algo dentro da variavel, usamos o 
+        //para ver se tem somente algo dentro da variavel, usamos o ".contains()"
+        contem = texto.contains("texto")
+        println("ver se tem algo igual = "+contem)
     }
 
     fun sobrefun(){
@@ -46,9 +57,18 @@ fun main() {
         }
         var strnumero = voltanum(500)
         println(strnumero)
+        //para setar valor defalt dentro de uma funcao, vc bota dentro dos (), junto com o tipo da variavel
+        //como se estivesse atribuindo um valor normal a ela
+        fun defaltvalor (padrao: String ="estre é o valor padrao"){
+            println(padrao)
+        }
+
+        defaltvalor()
+        defaltvalor("mudei o valor padao para algo passado")
     }
 
-    sobreprint()
-    sobrefun()
+
+    //sobreprint()
+    //sobrefun()
 
 }
