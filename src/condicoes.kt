@@ -31,7 +31,7 @@ fun main() {
 
         when (op) {
             1 -> println("esta e a opcao um") // a "->" e usada para mostrar o que acontece caso
-            // seja o numero que esta antes dela
+                                                // seja o numero que esta antes dela
             2 -> println("esta e a opcao dois")
             3 -> println("esta e a opcao tres")
             4 -> println("esta e a opcao quatro")
